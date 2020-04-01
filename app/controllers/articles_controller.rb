@@ -1,25 +1,26 @@
 class ArticlesController < ApplicationController
 
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_article, only: %i[show edit update destroy]
+  # before_action :set_article, only: [:show, :edit, :update, :destroy]
   def index
     @articles = Article.all
   end
 
-  def show
+  def show;
   end
 
   def new
     @article = Article.new
   end
 
-  def edit
+  def edit;
   end
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
-      flash[:notice] = "Article sucessfully created"
+      flash[:notice] = 'Article successfully created'
       redirect_to article_path(@article)
     else
       render :new
@@ -33,7 +34,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "Article sucessfully updated"
+      flash[:notice] = 'Article successfully updated'
       redirect_to article_path(@article)
     else
       render :edit
