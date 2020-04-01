@@ -1,0 +1,66 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body {
+  background: #000000;
+  background: linear-gradient(to right, #fff2f2, #ffc9c9);
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+// stylin for FAB
+#fab {
+  position:fixed;
+  bottom: 50px;
+  right: 50px;
+  text-align: center;
+  font-size: 60px;
+  font-family: bold, serif;
+}
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 12px;
+  text-align: center;
+}
+
+#biger-font {
+  font-size: 30px;
+}
+
+.top-margin {
+  margin-top: 25px
+}
+
+.jumbotron {
+  background-image: asset_url('background-blank-pages.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
+.jumbotron .display-4 {
+  color: #4F4E4D;
+}
+//styling for the footer
+#page-content {
+  flex: 1 0 auto;
+}
+#sticky-footer {
+  flex-shrink: initial;
+}
+

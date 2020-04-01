@@ -1,29 +1,16 @@
-<h3>Edit selected article</h3>
+<div class="container top-margin">
 
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the articles from being created</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li> <%= msg %>></li>
-    <% end %>
-  </ul>
+  <h3 class="text-center mt-4">Edit selected article</h3>
 
-<% end %>
+  <%= render "form" %>
 
-<%= form_with(model: @article, local: true) do |f| %>
+  <div class="mb-4">
+    <%= link_to "All articles", articles_path, class: "btn btn-outline-info" %>
+    <%= link_to "Show article", article_path(@article), class: "btn btn-outline-info" %>
+    <%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-outline-danger" %>
+  </div>
 
-  <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title %>
-  </p>
+</div>
 
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
 
-<% end %>
