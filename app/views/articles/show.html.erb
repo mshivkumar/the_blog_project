@@ -5,9 +5,23 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow mb-5 bg-white rounded">
         <div class="card-header font-italic">
-          by Shiv
+          Created by <%= @article.user.username %>
         </div>
         <div class="card-body">
+          <% if @article.user %>
+            <ul class="listing">
+              <div class="row">
+                <div class="col-4 offset-4">
+                  <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+                  <li class="article-title">
+                    <%= link_to @article.user.username, user_path(@article.user) %>
+                  </li>
+                  <li><small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+                  </li>
+                </div>
+              </div>
+            </ul>
+          <% end %>
           <div class="card-text"><%= simple_format(@article.description) %></div>
           <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-info" %>
           <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>

@@ -45,6 +45,11 @@ body {
   margin-top: 25px
 }
 
+.listing {
+  list-style: none;
+  padding: 0;
+}
+
 .jumbotron {
   background-image: asset_url('background-blank-pages.jpg');
   background-position: center center;
