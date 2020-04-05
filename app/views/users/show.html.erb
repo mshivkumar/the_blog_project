@@ -8,5 +8,9 @@
 
 <h5 class="text-center mt-4">Showing <%= @user.username %>'s Articles</h5>
 
-<%= render 'articles/article', obj: @user.articles %>
+<%= will_paginate(@user_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+
+<%= render 'articles/article', obj: @user_articles %>
+
+<%= will_paginate(@user_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
